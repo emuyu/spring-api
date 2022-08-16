@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequiredArgsConstructor
-//@RequestMapping("/v1/users")
+@RequestMapping(path = "/v1/users")
 public class UserController {
     @NonNull
     private final UserService userService;
@@ -36,7 +36,7 @@ public class UserController {
      * @param userBody　リクエストボディ
      * @return　更新後のユーザ
      */
-    @PostMapping("/v1/users")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User save(@RequestBody @Validated UserBody userBody) {
         return this.userService.save(userBody.toDomainUser());
@@ -47,7 +47,7 @@ public class UserController {
      *
      * @param id　削除したいユーザー
      */
-    @DeleteMapping
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable("id") String id) {
         this.userService.deleteById(id);

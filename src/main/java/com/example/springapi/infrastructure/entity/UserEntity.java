@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Table(name = "test_users")
 public class UserEntity {
     @Id
-    @Column(name = "test_name")
+    @Column(name = "id")
     private String id;
 
     @Column(name = "value")

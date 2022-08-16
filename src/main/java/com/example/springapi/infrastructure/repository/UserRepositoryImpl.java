@@ -1,4 +1,4 @@
-package com.example.springapi.infrastructure.repoository;
+package com.example.springapi.infrastructure.repository;
 
 
 import com.example.springapi.domain.object.User;
